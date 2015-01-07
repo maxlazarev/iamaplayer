@@ -13,7 +13,11 @@ class AuthController extends \BaseController{
         {
             return Response::make('Failed', 401);
         }
-        if (Auth::attempt(array('email' => $data['email'], 'password' => $data['password'])))
+        if(Auth::viaRemember())
+        {
+            return Response::make('Already logged', 400);
+        }
+        if (Auth::attempt(array('email' => $data['email'], 'password' => $data['password']), isset($data['rememberMe'])? $data['rememberMe'] : false))
         {
             return Auth::user();
         }else{

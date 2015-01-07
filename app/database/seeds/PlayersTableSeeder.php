@@ -21,6 +21,18 @@ class PlayersTableSeeder extends Seeder {
                     'remember_token' => '',
                     'created_at' => '2014-12-12 18:33:47',
                     'updated_at' => '2014-12-12 18:33:47',
+                ),
+            2 =>
+                array (
+                    'id' => 2,
+                    'email' => 'vasya@pupkin.com',
+                    'password' => Hash::make(Hash::make('1234')),
+                    'firstName' => 'Vasya',
+                    'lastName' => 'Pupkin',
+                    'admin' => false,
+                    'remember_token' => '',
+                    'created_at' => '2014-12-12 18:33:47',
+                    'updated_at' => '2014-12-12 18:33:47',
                 )));
         /*Eloquent::unguard();
 		foreach(range(2, 10) as $index)

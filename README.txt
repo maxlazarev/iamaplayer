@@ -27,7 +27,8 @@ Auh model:
     fbLogin - GET:
         params:
         returns (302):
-            Redirects user to facebook to grant application access to user data
+            Redirects user to f
+            acebook to grant application access to user data
     fbCallback - GET: callback function for facebook auth
         params:
             code - facebook generated token

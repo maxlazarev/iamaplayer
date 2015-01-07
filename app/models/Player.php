@@ -20,4 +20,9 @@ class Player extends \Eloquent implements UserInterface, RemindableInterface {
         'firstName' => 'required',
         'lastName' => 'required'
     );
+
+    public function isAdmin()
+    {
+        return $this->attributes['admin'] == '1';
+    }
 }

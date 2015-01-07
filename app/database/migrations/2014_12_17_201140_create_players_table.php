@@ -19,7 +19,7 @@ class CreatePlayersTable extends Migration {
             $table->string('password');
             $table->string('firstName');
             $table->string('lastName');
-            $table->string('remember_token')->nullable();
+            $table->rememberToken();
             $table->boolean('admin')->default(false);
 			$table->nullableTimestamps();
 		});

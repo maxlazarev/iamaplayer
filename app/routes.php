@@ -14,16 +14,27 @@
 Route::group(array('prefix' => 'api'), function() {
 
     //------Guest
+
+    //News
+    Route::resource('news', 'NewsPostsController',
+        array('only' => array('index', 'show')));
+
     Route::post('signup', 'AuthController@signUp');
     Route::post('login', array('uses' => 'AuthController@login', 'as' => 'login'));
     Route::get('fbLogin', array('uses' => 'AuthController@fbLogin', 'as' => 'fbLogin'));
     Route::get('fbCallback', array('uses' => 'AuthController@fbCallback', 'as' => 'fbCallback'));
     Route::resource('teams', 'TeamsController');
+
     //-------Must be logged
     Route::group(array('before' => 'auth'), function(){
 
         Route::get('logout', 'AuthController@logout');
 
+        //----Must be admin
+        Route::group(array('before' => 'admin'), function(){
+            Route::resource('news', 'NewsPostsController',
+                array('except' => array('index', 'show', 'create', 'edit')));
+        });
     });
 });
 
