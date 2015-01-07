@@ -19,6 +19,10 @@ Route::group(array('prefix' => 'api'), function() {
     Route::resource('news', 'NewsPostsController',
         array('only' => array('index', 'show')));
 
+    //Competitions
+    Route::resource('competitions', 'CompetitionsController',
+        array('only' => array('index', 'show')));
+
     Route::post('signup', 'AuthController@signUp');
     Route::post('login', array('uses' => 'AuthController@login', 'as' => 'login'));
     Route::get('fbLogin', array('uses' => 'AuthController@fbLogin', 'as' => 'fbLogin'));
@@ -42,7 +46,7 @@ Route::group(array('prefix' => 'api'), function() {
 
 Route::get('/', function()
 {
-	return View::make('hello');
+	return View::make('index');
 });
 
 

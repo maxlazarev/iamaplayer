@@ -1,4 +1,5 @@
 All API calls should be prefixed with "api/", for example "http://example.com/api/teams".
+GET calls can include 'page' and 'perPage' strings for pagination.
 
 Auh model:
     signup - POST:
@@ -35,3 +36,8 @@ Auh model:
         returns (200):
             'Logged in via facebook'
             auth data
+
+News model:
+
+Competitions model:
+
