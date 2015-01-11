@@ -14,4 +14,9 @@ class Competition extends \Eloquent {
     {
         return $this->hasOne('Player', 'id', 'owner');
     }
+
+    public function stages()
+    {
+        return $this->hasMany('Stage', 'competition');
+    }
 }

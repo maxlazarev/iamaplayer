@@ -53,8 +53,9 @@ class CompetitionsController extends \BaseController {
 	public function show($id)
 	{
 		$competition = Competition::findOrFail($id);
+        $competition->stages;
 
-		return View::make('competitions.show', compact('competition'));
+		return Response::json($competition);
 	}
 
 	/**

@@ -23,6 +23,7 @@ Route::group(array('prefix' => 'api'), function() {
     Route::resource('competitions', 'CompetitionsController',
         array('only' => array('index', 'show')));
 
+    //Auth routes
     Route::post('signup', 'AuthController@signUp');
     Route::post('login', array('uses' => 'AuthController@login', 'as' => 'login'));
     Route::get('fbLogin', array('uses' => 'AuthController@fbLogin', 'as' => 'fbLogin'));

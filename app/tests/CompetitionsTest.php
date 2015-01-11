@@ -11,4 +11,10 @@ class CompetitionsTest extends TestCase{
         $competition = Competition::find(4);
         $this->assertEquals($competition->admin->email, 'maxlazarev@gmail.com');
     }
+
+    public function testCompetitionStageRelationship()
+    {
+        $competition = Competition::find(4);
+        $this->assertEquals($competition->stages->count(), 4);
+    }
 }
