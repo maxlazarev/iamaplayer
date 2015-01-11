@@ -12,7 +12,7 @@ class CreateNewsPostsTable extends Migration {
 	 */
 	public function up()
 	{
-		Schema::create('newsPosts', function(Blueprint $table)
+		Schema::create('newsposts', function(Blueprint $table)
 		{
 			$table->increments('id');
             $table->string('title');
@@ -30,7 +30,7 @@ class CreateNewsPostsTable extends Migration {
 	 */
 	public function down()
 	{
-		Schema::drop('newsPosts');
+		Schema::drop('newsposts');
 	}
 
 }

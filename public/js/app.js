@@ -1,0 +1,1 @@
+var newsitemApp = angular.module('newsitemApp', ['mainCtrl', 'newsitemService']);
