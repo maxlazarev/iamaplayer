@@ -27,6 +27,7 @@ $app = new Illuminate\Foundation\Application;
 $env = $app->detectEnvironment(array(
 
 	'local' => array('homestead', 'homepc'),
+    'frontend-dev'=>array('ripburger-Aspire-5750')
 
 ));
 

@@ -10,8 +10,7 @@ class NewsPostsController extends \BaseController {
 	public function index()
 	{
         $perPage = isset(Input::all()['perPage']) ? Input::all()['perPage'] : 10;
-
-        $newsposts = Newspost::select(array('id','title', 'preview', 'created_at'))->paginate($perPage);
+        $newsposts = NewsPost::select(array('id','title', 'preview', 'created_at'))->paginate($perPage);
 
 		return $newsposts->toJson();
 	}
