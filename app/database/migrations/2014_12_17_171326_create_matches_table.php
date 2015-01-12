@@ -19,6 +19,7 @@ class CreateMatchesTable extends Migration {
             $table->integer('awayTeam');
             $table->integer('homeScored');
             $table->integer('awayScored');
+            $table->integer('round');
 			$table->nullableTimestamps();
 		});
 	}

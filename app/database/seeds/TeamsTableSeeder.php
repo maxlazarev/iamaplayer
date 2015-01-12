@@ -75,6 +75,42 @@ class TeamsTableSeeder extends Seeder {
 				'created_at' => '0000-00-00 00:00:00',
 				'updated_at' => '0000-00-00 00:00:00',
 			),
+            9 => array (
+                'id' => 10,
+                'name' => 'Unisport',
+                'created_at' => '0000-00-00 00:00:00',
+                'updated_at' => '0000-00-00 00:00:00',
+            ),
+            10 => array (
+                'id' => 11,
+                'name' => 'Singera',
+                'created_at' => '0000-00-00 00:00:00',
+                'updated_at' => '0000-00-00 00:00:00',
+            ),
+            11 => array (
+                'id' => 12,
+                'name' => 'Young Boys',
+                'created_at' => '0000-00-00 00:00:00',
+                'updated_at' => '0000-00-00 00:00:00',
+            ),
+            12 => array (
+                'id' => 13,
+                'name' => 'Instat Football',
+                'created_at' => '0000-00-00 00:00:00',
+                'updated_at' => '0000-00-00 00:00:00',
+            ),
+            13 => array (
+                'id' => 14,
+                'name' => 'FC Coltunas',
+                'created_at' => '0000-00-00 00:00:00',
+                'updated_at' => '0000-00-00 00:00:00',
+            ),
+            14 => array (
+                'id' => 15,
+                'name' => 'Dinamo',
+                'created_at' => '0000-00-00 00:00:00',
+                'updated_at' => '0000-00-00 00:00:00',
+            ),
 		));
 	}
 

@@ -18,6 +18,11 @@ class Match extends \Eloquent {
         return $query->where('home_team', '=', $id)->orWhere('away_team', '=', $id);
     }
 
+    public function belongsToRound()
+    {
+        return $this->belongsTo('round', 'id', 'round');
+    }
+
     public static $rules = array(
         'homeTeam' => 'exists:teams,id',
         'awayTeam' => 'exists:teams,id|different:homeTeam',

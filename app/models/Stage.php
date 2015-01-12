@@ -14,4 +14,20 @@ class Stage extends \Eloquent {
     {
         return $this->belongsTo('competition', 'competition', 'id');
     }
+
+    public function participants()
+    {
+        return $this->hasMany('participant', 'stage');
+    }
+
+    public function teams()
+    {
+        $teams = $this->belongsToMany('team', 'participants', 'stage', 'team')->withPivot('team','progress');
+        return $teams->select('name');
+    }
+
+    public function rounds()
+    {
+        return $this->hasMany('round', 'stage');
+    }
 }

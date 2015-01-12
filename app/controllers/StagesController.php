@@ -52,8 +52,29 @@ class StagesController extends \BaseController {
 	public function show($id)
 	{
 		$stage = Stage::findOrFail($id);
+        $teams = array();
+        foreach ($stage->teams as $team)
+        {
+            $teams[] = array(
+                'id' => $team->pivot->team,
+                'name' => $team->name,
+                'progress' => $team->pivot->progress
+            );
+        }
+        $rounds = array();
+        foreach ($stage->rounds as $round)
+        {
+            $rounds[] = array(
+                'id' => $round->id,
+                'name' => $round->name,
+            );
+        }
+        $response = $stage->toArray();
 
-		return View::make('stages.show', compact('stage'));
+        $response['teams'] = $teams;
+        $response['rounds'] = $rounds;
+
+		return Response::json($response);
 	}
 
 	/**
